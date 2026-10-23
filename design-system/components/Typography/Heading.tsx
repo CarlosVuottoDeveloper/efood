@@ -1,4 +1,5 @@
 import type { ComponentProps } from "react";
+import { cx } from "../../utils/cx";
 import styles from "./Typography.module.css";
 
 export type HeadingSize = "lg" | "md" | "sm";
@@ -15,7 +16,7 @@ export function Heading({ level, size, className, ...rest }: HeadingProps) {
     <Tag
       {...rest}
       data-size={size ?? defaultSize[level]}
-      className={[styles.heading, className].filter(Boolean).join(" ")}
+      className={cx(styles.heading, className)}
     />
   );
 }
