@@ -17,3 +17,5 @@ export { SkipLink, type SkipLinkProps } from "./components/Layout/SkipLink";
 export { SiteHeader } from "./components/SiteHeader/SiteHeader";
 export { NavPills } from "./components/SiteHeader/NavPills";
 export { Hero } from "./components/Hero/Hero";
+export { FeatureCard } from "./components/FeatureCard/FeatureCard";
+export { LogoWall } from "./components/LogoWall/LogoWall";
