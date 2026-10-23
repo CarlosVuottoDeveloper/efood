@@ -28,7 +28,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={urbanist.variable} lang="pt-BR">
+      <div className={`${urbanist.variable} ${urbanist.className}`} lang="pt-BR">
         <Story />
       </div>
     ),
