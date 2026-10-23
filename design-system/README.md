@@ -218,7 +218,7 @@ Os SVGs de ícone vão com `aria-hidden="true"`: quem dá nome ao botão é o te
 |---|---|---|---|
 | `PageCanvas` | `div` | — | Envolve a página inteira: fundo sálvia + tela branca arredondada. Um por página. |
 | `Container` | `div` | `width?: "default" \| "narrow"` (1240px / 720px) | Limita a largura e dá o respiro lateral. |
-| `Section` | `section` | `id: string` (obrigatório), `tone?: "plain" \| "surface"` | Cada seção da página. O `id` é a âncora do menu; já tem `scroll-margin-top`. |
+| `Section` | `section` | `id: string` (obrigatório), `tone?: "plain" \| "surface"` | Cada seção da página. O `id` é a âncora do menu: o clique para no topo da seção. Se o cabeçalho ficar fixo, defina `--section-scroll-offset` com a altura dele. |
 | `SectionHeader` | `div` | `align?: "start" \| "center"` | Agrupa `Eyebrow`, `Heading` e texto de abertura de uma seção. |
 | `SkipLink` | `a` | `href` padrão `"#main"`, texto padrão "Pular para o conteúdo" | Primeiro elemento da página. Só aparece quando recebe foco. |
 

@@ -17,16 +17,34 @@ export function ArrowIcon() {
 
 export type StepKind = "order" | "return" | "wash";
 
+/* Ícones desenhados em volta do centro (60, 60) do círculo, numa caixa de ~50px. */
 const stepPaths: Record<StepKind, React.ReactNode> = {
-  order: <path d="M70 70h60l-6 50H76zM86 70c0-14 6-22 14-22s14 8 14 22" />,
-  return: <path d="M60 100a40 40 0 0 1 72-24M140 100a40 40 0 0 1-72 24M128 62l6 14-14 4M72 138l-6-14 14-4" />,
-  wash: <path d="M100 50c20 26 36 42 36 62a36 36 0 0 1-72 0c0-20 16-36 36-62zM84 116a16 16 0 0 0 16 16" />,
+  order: (
+    <>
+      <path d="M38 50h44l-5 36H43z" />
+      <path d="M48 50c0-10 5-16 12-16s12 6 12 16" />
+    </>
+  ),
+  return: (
+    <>
+      <path d="M36 60a24 24 0 0 1 44.8-12" />
+      <path d="M82.4 39.1l-1.6 8.9-8.5-3.1" />
+      <path d="M84 60a24 24 0 0 1-44.8 12" />
+      <path d="M37.6 80.9l1.6-8.9 8.5 3.1" />
+    </>
+  ),
+  wash: (
+    <>
+      <path d="M60 33c-11 13-18 23-18 33a18 18 0 0 0 36 0c0-10-7-20-18-33z" />
+      <path d="M51 68a9 9 0 0 0 9 9" />
+    </>
+  ),
 };
 
 export function StepIllustration({ kind }: { kind: StepKind }) {
   return (
-    <svg width="160" height="128" viewBox="0 0 200 160" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <circle cx="100" cy="95" r="62" fill="var(--color-bg-canvas)" stroke="none" />
+    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="60" cy="60" r="58" fill="var(--color-bg-canvas)" stroke="none" />
       {stepPaths[kind]}
     </svg>
   );
