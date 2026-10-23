@@ -89,6 +89,7 @@
   font-size: var(--font-size-200);
   white-space: nowrap;
   text-decoration: none;
+  touch-action: manipulation;
 }
 
 .navLink:hover {

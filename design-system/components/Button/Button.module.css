@@ -16,6 +16,7 @@
   white-space: normal;
   text-wrap: balance;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .button[data-variant="dark"] {
@@ -47,6 +48,15 @@
 .button[data-variant="dark"]:hover,
 .button[data-variant="primary"]:hover {
   filter: brightness(0.92);
+}
+
+.button[data-variant="outline"]:hover {
+  background: var(--color-bg-highlight);
+}
+
+.button[data-variant="ghost"]:not(:has(.icon)):hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .icon {
@@ -86,6 +96,7 @@
   border: var(--border-width) solid transparent;
   border-radius: var(--radius-pill);
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .iconButton[data-variant="outline"] {
@@ -109,6 +120,11 @@
   color: var(--color-text-inverse);
 }
 
+.iconButton[data-variant="outline"]:hover {
+  background: var(--color-bg-highlight);
+}
+
+.iconButton[data-variant="mint"]:hover,
 .iconButton[data-variant="primary"]:hover,
 .iconButton[data-variant="dark"]:hover {
   filter: brightness(0.92);

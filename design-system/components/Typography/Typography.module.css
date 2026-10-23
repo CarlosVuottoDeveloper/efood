@@ -6,6 +6,7 @@
   letter-spacing: var(--tracking-tight);
   color: var(--color-text);
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 .heading {
@@ -14,8 +15,9 @@
   line-height: var(--leading-snug);
   color: var(--color-text);
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
-.heading[data-size="lg"] { font-size: var(--font-size-600); }
+.heading[data-size="lg"] { font-size: clamp(var(--font-size-500), 5vw, var(--font-size-600)); }
 .heading[data-size="md"] { font-size: var(--font-size-400); }
 .heading[data-size="sm"] { font-size: var(--font-size-300); }
 
