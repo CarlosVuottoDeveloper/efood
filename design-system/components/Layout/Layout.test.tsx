@@ -52,4 +52,11 @@ describe("Layout", () => {
     render(<SkipLink />);
     expect(screen.getByRole("link", { name: "Pular para o conteúdo" })).toHaveAttribute("href", "#main");
   });
+
+  it("SkipLink repassa props nativas e anexa className", () => {
+    render(<SkipLink id="skip" className="extra" />);
+    const link = screen.getByRole("link", { name: "Pular para o conteúdo" });
+    expect(link).toHaveAttribute("id", "skip");
+    expect(link).toHaveClass(styles.skipLink, "extra");
+  });
 });

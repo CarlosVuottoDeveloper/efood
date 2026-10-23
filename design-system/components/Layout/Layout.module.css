@@ -67,6 +67,11 @@
   opacity: 1;
 }
 
+.skipLink:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
 @media (min-width: 960px) {
   .page {
     padding: var(--space-7);
