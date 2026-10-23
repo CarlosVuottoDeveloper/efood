@@ -1,0 +1,17 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-100);
+  font-weight: 500;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--color-text);
+}
+
+.badge[data-tone="white"] { background: var(--color-bg-canvas); }
+.badge[data-tone="gray"] { background: var(--color-bg-surface); }
+.badge[data-tone="mint"] { background: var(--color-bg-highlight); }

@@ -6,3 +6,6 @@ export { Highlight } from "./components/Typography/Highlight";
 export { Emphasis } from "./components/Typography/Emphasis";
 export { Button, ButtonLink, ButtonIcon, type ButtonVariant, type ButtonProps, type ButtonLinkProps, type ButtonIconProps } from "./components/Button/Button";
 export { IconButton, type IconButtonProps } from "./components/Button/IconButton";
+export { Badge, type BadgeProps } from "./components/Badge/Badge";
+export { Avatar, type AvatarProps, type AvatarSize, type Person } from "./components/Avatar/Avatar";
+export { AvatarGroup, type AvatarGroupProps } from "./components/Avatar/AvatarGroup";
