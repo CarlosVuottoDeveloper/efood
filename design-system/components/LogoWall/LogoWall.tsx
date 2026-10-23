@@ -3,7 +3,7 @@ import { cx } from "../../utils/cx";
 import styles from "./LogoWall.module.css";
 
 function Root({ label, className, ...rest }: ComponentProps<"ul"> & { label: string }) {
-  return <ul {...rest} aria-label={label} className={cx(styles.root, className)} />;
+  return <ul role="list" {...rest} aria-label={label} className={cx(styles.root, className)} />;
 }
 
 function Item({ variant = "default", className, ...rest }: ComponentProps<"li"> & { variant?: "default" | "featured" }) {

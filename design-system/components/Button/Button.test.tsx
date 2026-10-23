@@ -5,6 +5,11 @@ import { Button, ButtonIcon, ButtonLink } from "./Button";
 import { IconButton } from "./IconButton";
 
 describe("Button", () => {
+  it("IconButton exige label no tipo", () => {
+    // @ts-expect-error label é obrigatório
+    render(<IconButton>x</IconButton>);
+  });
+
   it("Button tem type=button e data-variant=dark por padrão", () => {
     render(<Button>Fale com a gente</Button>);
     const button = screen.getByRole("button", { name: "Fale com a gente" });

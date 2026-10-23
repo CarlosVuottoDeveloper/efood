@@ -228,7 +228,7 @@ function LandingPage() {
                   Três passos e a embalagem volta para o ciclo
                 </Heading>
               </SectionHeader>
-              <ol className={styles.steps}>
+              <ol role="list" className={styles.steps}>
                 {steps.map((step) => (
                   <li key={step.number}>
                     <FeatureCard.Root aria-labelledby={`step-${step.number}`}>
@@ -281,7 +281,7 @@ function LandingPage() {
                     Conte um pouco sobre o seu negócio. A gente responde com uma proposta para a sua operação.
                   </Text>
                 </SectionHeader>
-                <form className={styles.form} onSubmit={(event) => event.preventDefault()}>
+                <form className={styles.form}>
                   <Field.Root>
                     <Field.Label>Nome</Field.Label>
                     <Field.Input name="name" autoComplete="name" />

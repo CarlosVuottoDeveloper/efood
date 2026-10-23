@@ -12,7 +12,7 @@ describe("LogoWall", () => {
       </LogoWall.Root>,
     );
     const list = screen.getByRole("list", { name: "Restaurantes parceiros" });
-    expect(list).toBeInTheDocument();
+    expect(list).toHaveAttribute("role", "list");
     expect(screen.getAllByRole("listitem")).toHaveLength(3);
   });
 

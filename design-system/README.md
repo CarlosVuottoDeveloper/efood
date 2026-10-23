@@ -159,7 +159,7 @@ Todos os componentes aceitam as props nativas do elemento raiz (`className`, `id
 
 | Componente | Elemento | Props próprias | Quando usar |
 |---|---|---|---|
-| `Button` | `button` | `variant?: "dark" \| "primary" \| "outline" \| "ghost"` (padrão `dark`); `type` padrão `"button"` | Ações: enviar formulário, abrir algo. |
+| `Button` | `button` | `variant?: "dark" \| "primary" \| "outline" \| "ghost"` (padrão `dark`); `type` padrão `"button"` | Ações: enviar formulário, abrir algo. Com `onClick`/`onSubmit` ou estado, use dentro de um componente `"use client"`. |
 | `ButtonLink` | `next/link` | as props do `Link` + `variant` | Navegação com cara de botão (CTAs que levam a âncoras ou páginas). |
 | `ButtonIcon` | `span` (`aria-hidden`) | `tone?: "primary" \| "dark"`, `children` obrigatório | O círculo com ícone dentro de um `Button`/`ButtonLink`. |
 | `IconButton` | `button` | `label: string` (vira `aria-label`, obrigatório), `variant?: "outline" \| "mint" \| "primary" \| "dark"` | Botão só com ícone. |
@@ -186,6 +186,8 @@ Variantes:
 
 <IconButton label="Mudar idioma"><GlobeIcon /></IconButton>
 ```
+
+`LeafIcon`, `ArrowIcon` e `GlobeIcon` são SVGs inline locais com `aria-hidden="true"` (veja as stories); não vêm do design system.
 
 Os SVGs de ícone vão com `aria-hidden="true"`: quem dá nome ao botão é o texto (ou o `label` do `IconButton`).
 
@@ -248,8 +250,7 @@ Compound components: `SiteHeader = { Root, Brand, Actions, SocialProof }` e `Nav
 
 Comportamento responsivo (intencional):
 
-- abaixo de 640px, o cabeçalho empilha em três linhas: marca, ações, menu. O menu rola na horizontal se não couber;
-- de 640px a 959px: marca e ações na primeira linha, menu na segunda;
+- abaixo de 960px, o cabeçalho empilha em três linhas, na mesma ordem do DOM e do Tab: marca, menu, ações. O menu rola na horizontal se não couber;
 - a partir de 960px: tudo numa linha (marca, menu centralizado, ações);
 - a partir de 1280px aparece o `SocialProof`.
 
@@ -390,7 +391,7 @@ Sempre dê `name`, `autoComplete` e o `type` certo (`email`, `tel`) aos campos. 
 
 ## Montando uma landing page
 
-O esqueleto abaixo é o mesmo da story **Exemplos/Landing page** (`design-system/examples/LandingPage.stories.tsx`). Copie a story para começar; o layout entre os componentes (colunas, espaçamentos) fica num CSS Module da página, como `LandingPage.module.css`.
+O esqueleto abaixo é resumido da story **Exemplos/Landing page** (`design-system/examples/LandingPage.stories.tsx`). Copie a story para começar; o layout entre os componentes (colunas, espaçamentos) fica num CSS Module da página, como `LandingPage.module.css`.
 
 ```tsx
 import Image from "next/image";
@@ -495,7 +496,7 @@ Pontos que fazem a página funcionar:
 - Um `Display` (h1) por página, no hero; cada seção tem um `Heading level={2}`; cards e subtópicos usam `level={3}`.
 - Os `id` das seções são as âncoras do menu (`#about-us`, `#eco-restaurants`, `#partners`).
 - O `Highlight` aparece uma vez, no hero. O `Eyebrow` aparece no máximo uma vez por seção.
-- A página usa `"use client"` só se você colocar estado nela. O `Field` já resolve o próprio lado cliente (veja [Contribuindo](#contribuindo)).
+- Handlers de evento (`onSubmit`, `onClick`…) ou estado não podem ficar num Server Component: coloque esse pedaço num componente pequeno com `"use client"`. O `Field` já resolve o próprio lado cliente (veja [Contribuindo](#contribuindo)).
 
 A landing atual (`app/page.tsx`, `components/*`, `app/globals.css`) ainda não usa o design system. A migração dela é o próximo plano (`feature/landing-page-redesign`).
 

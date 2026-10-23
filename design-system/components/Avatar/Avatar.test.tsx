@@ -28,12 +28,19 @@ describe("Avatar", () => {
 describe("AvatarGroup", () => {
   it("AvatarGroup mostra no máximo max avatares", () => {
     render(<AvatarGroup people={people} />);
-    expect(screen.getAllByRole("img")).toHaveLength(3);
+    expect(screen.getAllByRole("img").filter((el) => el.textContent !== "+2")).toHaveLength(3);
   });
 
   it("AvatarGroup resume o excedente", () => {
     render(<AvatarGroup people={people} />);
-    expect(screen.getByText("+2")).toHaveAttribute("aria-label", "mais 2 pessoas");
+    const more = screen.getByText("+2");
+    expect(more).toHaveAttribute("aria-label", "mais 2 pessoas");
+    expect(more).toHaveAttribute("role", "img");
+  });
+
+  it("AvatarGroup usa singular para 1 pessoa a mais", () => {
+    render(<AvatarGroup people={people.slice(0, 4)} />);
+    expect(screen.getByRole("img", { name: "mais 1 pessoa" })).toHaveTextContent("+1");
   });
 
   it("AvatarGroup sem excedente não mostra contador", () => {

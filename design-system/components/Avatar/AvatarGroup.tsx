@@ -20,7 +20,12 @@ export function AvatarGroup({ people, max = 3, size = "md", className, ...rest }
         <Avatar key={`${person.name}-${index}`} person={person} size={size} />
       ))}
       {extra > 0 && (
-        <Badge tone="mint" className={styles.more} aria-label={`mais ${extra} pessoas`}>
+        <Badge
+          tone="mint"
+          className={styles.more}
+          role="img"
+          aria-label={extra === 1 ? "mais 1 pessoa" : `mais ${extra} pessoas`}
+        >
           +{extra}
         </Badge>
       )}
