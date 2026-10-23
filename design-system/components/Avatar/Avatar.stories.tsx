@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import vivendi from "@/public/img/vivendi.jpg";
+import vivendi from "@/public/img/vivendi.webp";
 import { Badge } from "../Badge/Badge";
 import { Avatar } from "./Avatar";
 import { AvatarGroup } from "./AvatarGroup";

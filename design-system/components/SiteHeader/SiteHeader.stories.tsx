@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Image from "next/image";
-import logo from "@/public/img/logo.png";
-import vivendi from "@/public/img/vivendi.jpg";
+import logo from "@/public/img/logo.svg";
+import vivendi from "@/public/img/vivendi.webp";
 import { AvatarGroup } from "../Avatar/AvatarGroup";
 import { Badge } from "../Badge/Badge";
 import { ButtonLink } from "../Button/Button";
@@ -30,7 +30,7 @@ function Header({ items }: Props) {
   return (
     <SiteHeader.Root>
       <SiteHeader.Brand href="#home">
-        <Image src={logo} alt="" width={32} height={32} />
+        <Image src={logo} alt="" width={32} height={32} unoptimized />
         eFood
       </SiteHeader.Brand>
       <NavPills.Root label="Principal">

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Image from "next/image";
-import logo from "@/public/img/logo.png";
-import lifecycle from "@/public/img/product-lifecycle.png";
-import spRestaurants from "@/public/img/sp-restaurants.jpg";
+import logo from "@/public/img/logo.svg";
+import lifecycle from "@/public/img/product-lifecycle.webp";
+import spRestaurants from "@/public/img/sp-restaurants.webp";
 import {
   AvatarGroup,
   Badge,
@@ -95,7 +95,7 @@ function LandingPage() {
       <PageCanvas>
         <SiteHeader.Root>
           <SiteHeader.Brand href="#main">
-            <Image src={logo} alt="" width={32} height={32} />
+            <Image src={logo} alt="" width={32} height={32} unoptimized />
             eFood
           </SiteHeader.Brand>
           <NavPills.Root label="Principal">
