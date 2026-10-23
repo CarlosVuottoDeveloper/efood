@@ -3,6 +3,7 @@
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: var(--space-7);
+  padding-block: var(--space-6) var(--space-8);
 }
 
 .content {
@@ -13,11 +14,13 @@
   max-width: 36rem;
 }
 
+/* Texto → botões: 32px (gap do .content + 8px). */
 .actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-3) var(--space-5);
+  margin-block-start: var(--space-2);
 }
 
 .media {
@@ -28,6 +31,7 @@
   display: block;
   width: 100%;
   height: auto;
+  border-radius: var(--radius-lg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -50,5 +54,7 @@
 @media (min-width: 960px) {
   .root {
     grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-8);
+    padding-block: var(--space-7) var(--space-9);
   }
 }

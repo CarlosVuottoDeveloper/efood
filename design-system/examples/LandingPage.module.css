@@ -1,9 +1,5 @@
 /* Layout da página de exemplo: só tokens, mobile-first, breakpoints 640px e 960px. */
 
-.hero {
-  padding-block: var(--space-6) var(--space-8);
-}
-
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -46,13 +42,6 @@
   list-style: none;
 }
 
-.stepText {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  margin-block-start: var(--space-5);
-}
-
 .wall {
   margin-block-start: var(--space-7);
 }
@@ -68,10 +57,6 @@
 }
 
 @media (min-width: 960px) {
-  .hero {
-    padding-block: var(--space-7) var(--space-9);
-  }
-
   .split {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-8);

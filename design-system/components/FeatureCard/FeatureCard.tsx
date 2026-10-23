@@ -6,6 +6,10 @@ function Root({ tone = "gray", className, ...rest }: ComponentProps<"article"> &
   return <article {...rest} data-tone={tone} className={cx(styles.root, className)} />;
 }
 
+function Content({ className, ...rest }: ComponentProps<"div">) {
+  return <div {...rest} className={cx(styles.content, className)} />;
+}
+
 function Meta({ className, ...rest }: ComponentProps<"div">) {
   return <div {...rest} className={cx(styles.meta, className)} />;
 }
@@ -18,4 +22,4 @@ function Media({ className, ...rest }: ComponentProps<"div">) {
   return <div {...rest} className={cx(styles.media, className)} />;
 }
 
-export const FeatureCard = { Root, Meta, Title, Media };
+export const FeatureCard = { Root, Content, Meta, Title, Media };

@@ -279,7 +279,7 @@ A ordem dos filhos é a ordem do Tab: marca → menu → ações.
 
 ### Hero
 
-Compound component `Hero = { Root, Content, Actions, Media }`. `Hero.Root` é uma `section` (dê a ela `aria-labelledby` apontando para o `Display`); as demais partes são `div`. Uma coluna no celular, duas a partir de 960px. A imagem de `Hero.Media` entra com uma animação curta de escala e opacidade, desligada com `prefers-reduced-motion`.
+Compound component `Hero = { Root, Content, Actions, Media }`. `Hero.Root` é uma `section` (dê a ela `aria-labelledby` apontando para o `Display`); as demais partes são `div`. Uma coluna no celular, duas a partir de 960px. O `Hero.Root` já traz o respiro vertical da seção (32/64px no celular, 48/96px a partir de 960px) e o `Hero.Actions` fica um pouco mais afastado do texto que os outros itens; não some margens por fora. A imagem de `Hero.Media` ganha cantos `--radius-lg` e entra com uma animação curta de escala e opacidade, desligada com `prefers-reduced-motion`.
 
 ```tsx
 <Container>
@@ -305,11 +305,12 @@ Compound component `Hero = { Root, Content, Actions, Media }`. `Hero.Root` é um
 
 ### FeatureCard
 
-Compound component `FeatureCard = { Root, Meta, Title, Media }`.
+Compound component `FeatureCard = { Root, Content, Meta, Title, Media }`.
 
 | Parte | Elemento | Props próprias |
 |---|---|---|
 | `FeatureCard.Root` | `article` | `tone?: "gray" \| "mint"` (padrão `gray`; `mint` para o card em evidência) |
+| `FeatureCard.Content` | `div` | — (coluna de texto: agrupa `Meta`, `Title` e textos extras) |
 | `FeatureCard.Meta` | `div` | — (linha de badge, avatares, ícone) |
 | `FeatureCard.Title` | `h3` | `as?: "h3" \| "h4"` |
 | `FeatureCard.Media` | `div` | — (ilustração; fica à direita a partir de 640px) |
@@ -320,12 +321,13 @@ Use para passos ("como funciona") e destaques. Numeração ("01", "02") só quan
 <ol>
   <li>
     <FeatureCard.Root aria-labelledby="step-01">
-      <div>
+      <FeatureCard.Content>
         <FeatureCard.Meta>
           <Badge tone="white">01</Badge>
         </FeatureCard.Meta>
         <FeatureCard.Title id="step-01">Peça no restaurante parceiro</FeatureCard.Title>
-      </div>
+        <Text tone="muted">Sua refeição chega numa embalagem durável.</Text>
+      </FeatureCard.Content>
       <FeatureCard.Media>
         <OrderIllustration />
       </FeatureCard.Media>
@@ -334,7 +336,7 @@ Use para passos ("como funciona") e destaques. Numeração ("01", "02") só quan
 </ol>
 ```
 
-O card é um grid de duas colunas (conteúdo + mídia): agrupe `Meta`, `Title` e textos extras num `div`, como acima. O espaço entre `Meta` e `Title` é do seu layout (veja `.stepText` na story de exemplo). A ilustração precisa de `width`/`height` próprios, para a coluna da mídia ter tamanho.
+O card é um grid de duas colunas a partir de 640px: `Content` à esquerda e `Media` à direita. O espaçamento interno já vem pronto (24px entre `Meta` e `Title`, 8px entre `Title` e o texto), então não adicione margens. A ilustração ocupa 11rem (13rem a partir de 960px) e encosta na borda de baixo do card.
 
 ### LogoWall
 

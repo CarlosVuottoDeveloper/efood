@@ -38,4 +38,16 @@ describe("FeatureCard", () => {
     expect(screen.getByTestId("meta")).toHaveClass("extra");
     expect(screen.getByTestId("media")).toHaveClass("extra");
   });
+
+  it("FeatureCard.Content agrupa meta, título e texto e repassa props", () => {
+    render(
+      <FeatureCard.Content data-testid="content" className="extra">
+        <FeatureCard.Meta />
+        <FeatureCard.Title>Peça</FeatureCard.Title>
+      </FeatureCard.Content>,
+    );
+    const content = screen.getByTestId("content");
+    expect(content).toHaveClass("extra");
+    expect(content).toContainElement(screen.getByRole("heading", { name: "Peça" }));
+  });
 });

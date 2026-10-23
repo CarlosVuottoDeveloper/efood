@@ -118,7 +118,7 @@ function LandingPage() {
         </SiteHeader.Root>
 
         <main id="main">
-          <Container className={styles.hero}>
+          <Container>
             <Hero.Root aria-labelledby="hero-title">
               <Hero.Content>
                 <Display as="h1" id="hero-title">
@@ -232,15 +232,13 @@ function LandingPage() {
                 {steps.map((step) => (
                   <li key={step.number}>
                     <FeatureCard.Root aria-labelledby={`step-${step.number}`}>
-                      <div>
+                      <FeatureCard.Content>
                         <FeatureCard.Meta>
                           <Badge tone="white">{step.number}</Badge>
                         </FeatureCard.Meta>
-                        <div className={styles.stepText}>
-                          <FeatureCard.Title id={`step-${step.number}`}>{step.title}</FeatureCard.Title>
-                          <Text tone="muted">{step.description}</Text>
-                        </div>
-                      </div>
+                        <FeatureCard.Title id={`step-${step.number}`}>{step.title}</FeatureCard.Title>
+                        <Text tone="muted">{step.description}</Text>
+                      </FeatureCard.Content>
                       <FeatureCard.Media>
                         <StepIllustration kind={step.kind} />
                       </FeatureCard.Media>

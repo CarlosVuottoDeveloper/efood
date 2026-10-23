@@ -42,12 +42,14 @@
   color: var(--color-text-muted);
 }
 
+/* inline-block com line-height 1: o contorno cabe na entrelinha do Display (1.1)
+   e não encosta nas descendentes da linha de cima. */
 .highlight {
-  padding-inline: 0.15em;
+  display: inline-block;
+  padding: 0 0.18em 0.06em;
+  line-height: 1;
   border: var(--border-width) solid var(--color-border-accent);
   border-radius: var(--radius-pill);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
 
 .emphasis {

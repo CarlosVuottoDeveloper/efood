@@ -41,7 +41,7 @@ function Card({ step, tone }: { step: Step; tone?: "gray" | "mint" }) {
   const id = `step-${step.number}`;
   return (
     <FeatureCard.Root tone={tone} aria-labelledby={id}>
-      <div>
+      <FeatureCard.Content>
         <FeatureCard.Meta>
           <Badge tone="white">{step.number}</Badge>
           <AvatarGroup people={people} max={3} size="sm" />
@@ -49,10 +49,8 @@ function Card({ step, tone }: { step: Step; tone?: "gray" | "mint" }) {
             <Plus />
           </IconButton>
         </FeatureCard.Meta>
-        <FeatureCard.Title id={id} style={{ marginBlockStart: "var(--space-6)" }}>
-          {step.title}
-        </FeatureCard.Title>
-      </div>
+        <FeatureCard.Title id={id}>{step.title}</FeatureCard.Title>
+      </FeatureCard.Content>
       <FeatureCard.Media>
         <Illustration kind={step.kind} />
       </FeatureCard.Media>
