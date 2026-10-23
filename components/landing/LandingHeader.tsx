@@ -1,12 +1,12 @@
 import Image from "next/image";
-import logo from "@/public/img/logo.webp";
+import logo from "@/public/img/logo.svg";
 import { ButtonLink, NavPills, SiteHeader } from "@/design-system";
 
 export function LandingHeader() {
   return (
     <SiteHeader.Root>
       <SiteHeader.Brand href="/">
-        <Image src={logo} alt="" width={32} height={32} />
+        <Image src={logo} alt="" width={32} height={32} unoptimized priority />
         eFood
       </SiteHeader.Brand>
       <NavPills.Root label="Principal">

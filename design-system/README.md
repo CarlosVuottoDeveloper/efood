@@ -257,7 +257,7 @@ Comportamento responsivo (intencional):
 ```tsx
 <SiteHeader.Root>
   <SiteHeader.Brand href="#main">
-    <Image src={logo} alt="" width={32} height={32} />
+    <Image src={logo} alt="" width={32} height={32} unoptimized />
     eFood
   </SiteHeader.Brand>
   <NavPills.Root label="Principal">
@@ -397,7 +397,7 @@ O esqueleto abaixo é resumido da story **Exemplos/Landing page** (`design-syste
 
 ```tsx
 import Image from "next/image";
-import logo from "@/public/img/logo.webp";
+import logo from "@/public/img/logo.svg";
 import lifecycle from "@/public/img/product-lifecycle.webp";
 import {
   Button, ButtonIcon, ButtonLink, Checkbox, Container, Display, Eyebrow, FeatureCard, Field,
@@ -413,7 +413,7 @@ export default function Home() {
       <PageCanvas>
         <SiteHeader.Root>
           <SiteHeader.Brand href="#main">
-            <Image src={logo} alt="" width={32} height={32} />
+            <Image src={logo} alt="" width={32} height={32} unoptimized />
             eFood
           </SiteHeader.Brand>
           <NavPills.Root label="Principal">

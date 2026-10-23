@@ -7,6 +7,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "eFood",
   description: "Embalagens reutilizáveis compartilhadas pela rede de restaurantes parceiros.",
+  icons: { icon: { url: "/img/logo.svg", type: "image/svg+xml" } },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
