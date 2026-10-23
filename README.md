@@ -80,6 +80,24 @@ As fotos são do [Pexels](https://www.pexels.com/), usadas sob a licença do Pex
 - [Food in Net Bags](https://www.pexels.com/photo/food-in-net-bags-5852201/), de Karola G
 - [Hanging Plants Inside a Restaurant](https://www.pexels.com/photo/hanging-plants-inside-a-restaurant-5531035/), de Rachel Claire
 
+## Deploy (Vercel)
+
+O site é publicado no [Vercel](https://vercel.com/) pelo GitHub Actions ([.github/workflows/vercel.yml](.github/workflows/vercel.yml)). Cada execução roda testes, checagem de tipos e build, e só publica se tudo passar:
+
+| Evento | Deploy |
+|---|---|
+| push na `main` | produção |
+| push na `develop` | preview |
+| pull request para `main` ou `develop` | preview do PR |
+
+O deploy automático do Vercel pelo Git fica desligado no [vercel.json](vercel.json), para que nada seja publicado sem passar pelos testes.
+
+**Configuração (uma vez só):**
+
+1. Crie o projeto no Vercel e vincule a pasta: `npx vercel link`. Isso gera `.vercel/project.json` (já ignorado pelo Git) com `orgId` e `projectId`.
+2. Crie um token em [vercel.com/account/tokens](https://vercel.com/account/tokens).
+3. No GitHub, em **Settings → Secrets and variables → Actions**, cadastre três segredos: `VERCEL_TOKEN`, `VERCEL_ORG_ID` (o `orgId`) e `VERCEL_PROJECT_ID` (o `projectId`).
+
 ## Fluxo de branches (gitflow)
 
 - `main`: o que está publicado. Cada versão ganha uma tag (`v1.0.0`, …).
