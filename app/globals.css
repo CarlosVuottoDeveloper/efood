@@ -5,3 +5,13 @@
     scroll-behavior: smooth;
   }
 }
+
+/* Cabeçalho fixo a partir de 960px (6rem de altura, ver SiteHeader). */
+@media (min-width: 960px) {
+  html {
+    /* Âncoras e foco do teclado param abaixo do cabeçalho. */
+    scroll-padding-top: 6rem;
+    /* Nas seções, o título fica 48px abaixo do cabeçalho em vez dos 96px do padding. */
+    --section-scroll-offset: calc(var(--space-7) - 6rem);
+  }
+}

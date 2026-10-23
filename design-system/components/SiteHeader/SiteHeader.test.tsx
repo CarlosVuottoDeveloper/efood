@@ -50,4 +50,15 @@ describe("SiteHeader", () => {
     expect(screen.getByText("+90 avaliações")).toBeInTheDocument();
     expect(screen.getByTestId("social")).toHaveClass("extra");
   });
+
+  it("SiteHeader.Root é estático por padrão e fixo com position=sticky", () => {
+    render(
+      <>
+        <SiteHeader.Root data-testid="static" />
+        <SiteHeader.Root data-testid="sticky" position="sticky" />
+      </>,
+    );
+    expect(screen.getByTestId("static")).toHaveAttribute("data-position", "static");
+    expect(screen.getByTestId("sticky")).toHaveAttribute("data-position", "sticky");
+  });
 });

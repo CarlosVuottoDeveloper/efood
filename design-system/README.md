@@ -218,7 +218,7 @@ Os SVGs de ícone vão com `aria-hidden="true"`: quem dá nome ao botão é o te
 |---|---|---|---|
 | `PageCanvas` | `div` | — | Envolve a página inteira: fundo sálvia + tela branca arredondada. Um por página. |
 | `Container` | `div` | `width?: "default" \| "narrow"` (1240px / 720px) | Limita a largura e dá o respiro lateral. |
-| `Section` | `section` | `id: string` (obrigatório), `tone?: "plain" \| "surface"` | Cada seção da página. O `id` é a âncora do menu: o clique para no topo da seção. Se o cabeçalho ficar fixo, defina `--section-scroll-offset` com a altura dele. |
+| `Section` | `section` | `id: string` (obrigatório), `tone?: "plain" \| "surface"` | Cada seção da página. O `id` é a âncora do menu: o clique para no topo da seção. Com cabeçalho fixo, ajuste `--section-scroll-offset` (veja `SiteHeader`, `position="sticky"`). |
 | `SectionHeader` | `div` | `align?: "start" \| "center"` | Agrupa `Eyebrow`, `Heading` e texto de abertura de uma seção. |
 | `SkipLink` | `a` | `href` padrão `"#main"`, texto padrão "Pular para o conteúdo" | Primeiro elemento da página. Só aparece quando recebe foco. |
 
@@ -241,7 +241,7 @@ Compound components: `SiteHeader = { Root, Brand, Actions, SocialProof }` e `Nav
 
 | Parte | Elemento | Props próprias |
 |---|---|---|
-| `SiteHeader.Root` | `header` | — |
+| `SiteHeader.Root` | `header` | `position?: "static" \| "sticky"` (padrão `static`; `sticky` fixa o cabeçalho no topo a partir de 960px) |
 | `SiteHeader.Brand` | `next/link` (`translate="no"`) | `href` e `children` obrigatórios |
 | `SiteHeader.Actions` | `div` | — |
 | `SiteHeader.SocialProof` | `div` | — (só aparece a partir de 1280px) |
@@ -253,6 +253,17 @@ Comportamento responsivo (intencional):
 - abaixo de 960px, o cabeçalho empilha em três linhas, na mesma ordem do DOM e do Tab: marca, menu, ações. O menu rola na horizontal se não couber;
 - a partir de 960px: tudo numa linha (marca, menu centralizado, ações);
 - a partir de 1280px aparece o `SocialProof`.
+
+Cabeçalho fixo (`position="sticky"`): só a partir de 960px, onde o cabeçalho tem uma linha e 6rem de altura. Abaixo disso ele tem três linhas e rola com a página, para não cobrir a tela do celular. Ao usar, avise a rolagem da página para âncoras e foco do teclado não pararem embaixo dele (veja `app/globals.css`):
+
+```css
+@media (min-width: 960px) {
+  html {
+    scroll-padding-top: 6rem;
+    --section-scroll-offset: calc(var(--space-7) - 6rem);
+  }
+}
+```
 
 ```tsx
 <SiteHeader.Root>
