@@ -1,0 +1,131 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: 3rem;
+  padding: var(--space-2) var(--space-5);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: var(--font-size-300);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  text-wrap: balance;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.button[data-variant="dark"] {
+  background: var(--color-action-dark);
+  color: var(--color-text-inverse);
+}
+
+.button[data-variant="primary"] {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+
+.button[data-variant="outline"] {
+  background: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.button[data-variant="outline"]:has(.icon) {
+  padding-inline-end: var(--space-2);
+}
+
+.button[data-variant="ghost"] {
+  background: transparent;
+  color: var(--color-text);
+  padding-inline: 0;
+}
+
+.button[data-variant="dark"]:hover,
+.button[data-variant="primary"]:hover {
+  filter: brightness(0.92);
+}
+
+.button[data-variant="outline"]:hover {
+  background: var(--color-bg-highlight);
+}
+
+.button[data-variant="ghost"]:not(:has(.icon)):hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-pill);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.icon[data-tone="primary"] {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+
+.icon[data-tone="dark"] {
+  background: var(--color-action-dark);
+  color: var(--color-text-inverse);
+}
+
+.button[data-variant="outline"]:hover .icon,
+.button[data-variant="ghost"]:hover .icon {
+  transform: translateX(2px);
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.iconButton[data-variant="outline"] {
+  background: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.iconButton[data-variant="mint"] {
+  background: var(--color-bg-highlight);
+  color: var(--color-text);
+}
+
+.iconButton[data-variant="primary"] {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+
+.iconButton[data-variant="dark"] {
+  background: var(--color-action-dark);
+  color: var(--color-text-inverse);
+}
+
+.iconButton[data-variant="outline"]:hover {
+  background: var(--color-bg-highlight);
+}
+
+.iconButton[data-variant="mint"]:hover,
+.iconButton[data-variant="primary"]:hover,
+.iconButton[data-variant="dark"]:hover {
+  filter: brightness(0.92);
+}

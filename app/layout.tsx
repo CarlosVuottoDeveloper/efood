@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { urbanist } from "@/design-system/fonts";
+import "@/design-system/tokens/tokens.css";
+import "@/design-system/tokens/base.css";
 import "./globals.css";
-
-const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "eFood",
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
-      <body className={poppins.className}>{children}</body>
+    <html lang="pt-BR" className={urbanist.variable}>
+      <body>{children}</body>
     </html>
   );
 }

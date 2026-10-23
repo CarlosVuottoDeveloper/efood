@@ -1,0 +1,23 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { palette } from "../tokens/tokens";
+import { ColorSwatches, SemanticColorTable, ContrastTable } from "./TokenDocs";
+
+<Meta title="Fundações/Cores" />
+
+# Cores
+
+Uma paleta pequena: o verde escuro aparece pouco (item ativo, ícones de ação) e o menta faz os destaques. Os componentes nunca usam os primitivos diretamente, só as cores semânticas.
+
+## Paleta
+
+<ColorSwatches tokens={palette} />
+
+## Cores semânticas
+
+<SemanticColorTable />
+
+## Contraste (WCAG AA)
+
+Texto normal exige 4,5:1; texto grande e ícones exigem 3:1. A combinação de `action-primary` sobre `bg-highlight` só vale para ícones e texto a partir de 24px.
+
+<ContrastTable />
