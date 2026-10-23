@@ -1,0 +1,129 @@
+/* Layout da landing: só tokens, mobile-first, breakpoints 640px e 960px. */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-7);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.topics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: var(--space-5) var(--space-6);
+  margin-block-start: var(--space-3);
+}
+
+.topic {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  margin: var(--space-7) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pollSection {
+  padding-block-end: var(--space-8);
+}
+
+.poll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-7) var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-highlight);
+  text-align: center;
+}
+
+.poll > h2 {
+  max-width: 28ch;
+}
+
+.pollActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.formArea {
+  min-width: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-canvas);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  padding-block: var(--space-6) var(--space-7);
+  border-block-start: var(--border-width) solid var(--color-bg-surface);
+}
+
+.footer a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+@media (min-width: 960px) {
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8);
+  }
+
+  .split[data-align="start"] {
+    align-items: start;
+  }
+
+  /* Foto à esquerda no desktop; no DOM o texto vem antes. */
+  .split[data-media="start"] > :last-child {
+    order: -1;
+  }
+
+  .pollSection {
+    padding-block-end: var(--space-9);
+  }
+
+  .poll {
+    padding: var(--space-8) var(--space-7);
+  }
+}
