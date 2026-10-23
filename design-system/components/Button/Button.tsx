@@ -24,6 +24,24 @@ export function Button({ variant = "dark", type = "button", className, ...rest }
 }
 
 export function ButtonLink({ variant = "dark", className, ...rest }: ButtonLinkProps) {
+  // Âncora da mesma página ("#secao") usa <a> nativo: o roteador do Next não rola de novo
+  // quando a URL já tem esse hash, e o navegador rola em todo clique.
+  if (typeof rest.href === "string" && rest.href.startsWith("#")) {
+    const {
+      as: _as,
+      replace: _replace,
+      scroll: _scroll,
+      shallow: _shallow,
+      passHref: _passHref,
+      prefetch: _prefetch,
+      locale: _locale,
+      legacyBehavior: _legacyBehavior,
+      onNavigate: _onNavigate,
+      transitionTypes: _transitionTypes,
+      ...anchorProps
+    } = rest;
+    return <a {...anchorProps} href={rest.href} data-variant={variant} className={cx(styles.button, className)} />;
+  }
   return <Link {...rest} data-variant={variant} className={cx(styles.button, className)} />;
 }
 
