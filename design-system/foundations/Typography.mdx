@@ -1,0 +1,19 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { TypeScale } from "./TokenDocs";
+
+<Meta title="Fundações/Tipografia" />
+
+# Tipografia
+
+Uma única família, Urbanist, nos pesos 400 e 500. A escala segue proporções tradicionais de tipografia, com entrelinhas `tight` (1,1) para display, `snug` (1,25) para títulos e `normal` (1,5) para texto. O tracking `tight` (-0,02em) vale para display e o `wide` (0,08em) para o eyebrow. Linhas de texto têm no máximo 65ch.
+
+## Escala
+
+<TypeScale />
+
+## Regras de uso
+
+- O `Highlight` (palavra contornada por uma pílula menta) aparece uma vez por página, no hero.
+- O `Eyebrow` em caixa alta aparece no máximo uma vez por seção.
+- Numeração ("01", "02") só quando o conteúdo é de fato uma sequência.
+- O display usa `clamp(var(--font-size-500), 6vw, var(--font-size-700))`.
