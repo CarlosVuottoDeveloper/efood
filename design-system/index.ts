@@ -16,3 +16,4 @@ export { SectionHeader, type SectionHeaderProps } from "./components/Layout/Sect
 export { SkipLink, type SkipLinkProps } from "./components/Layout/SkipLink";
 export { SiteHeader } from "./components/SiteHeader/SiteHeader";
 export { NavPills } from "./components/SiteHeader/NavPills";
+export { Hero } from "./components/Hero/Hero";
