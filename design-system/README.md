@@ -500,7 +500,7 @@ Pontos que fazem a página funcionar:
 - O `Highlight` aparece uma vez, no hero. O `Eyebrow` aparece no máximo uma vez por seção.
 - Handlers de evento (`onSubmit`, `onClick`…) ou estado não podem ficar num Server Component: coloque esse pedaço num componente pequeno com `"use client"`. O `Field` já resolve o próprio lado cliente (veja [Contribuindo](#contribuindo)).
 
-A landing atual (`app/page.tsx`, `components/*`, `app/globals.css`) ainda não usa o design system. A migração dela é o próximo plano (`feature/landing-page-redesign`).
+A landing do site (`app/page.tsx`) é montada só com o design system: as seções ficam em `components/landing/`, uma por arquivo, e o layout delas em `components/landing/landing.module.css`. As fotos vêm do Pexels (`public/img/pexels/`), com crédito aos fotógrafos no rodapé.
 
 ## Regras
 
