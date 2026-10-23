@@ -160,7 +160,7 @@ Todos os componentes aceitam as props nativas do elemento raiz (`className`, `id
 | Componente | Elemento | Props próprias | Quando usar |
 |---|---|---|---|
 | `Button` | `button` | `variant?: "dark" \| "primary" \| "outline" \| "ghost"` (padrão `dark`); `type` padrão `"button"` | Ações: enviar formulário, abrir algo. Com `onClick`/`onSubmit` ou estado, use dentro de um componente `"use client"`. |
-| `ButtonLink` | `next/link` | as props do `Link` + `variant` | Navegação com cara de botão (CTAs que levam a âncoras ou páginas). |
+| `ButtonLink` | `next/link` (ou `a` para `#âncora`) | as props do `Link` + `variant` | Navegação com cara de botão (CTAs que levam a âncoras ou páginas). Com `href="#secao"` vira um `<a>` nativo, para a página rolar até a seção em todo clique, mesmo com a URL já nesse hash. |
 | `ButtonIcon` | `span` (`aria-hidden`) | `tone?: "primary" \| "dark"`, `children` obrigatório | O círculo com ícone dentro de um `Button`/`ButtonLink`. |
 | `IconButton` | `button` | `label: string` (vira `aria-label`, obrigatório), `variant?: "outline" \| "mint" \| "primary" \| "dark"` | Botão só com ícone. |
 
