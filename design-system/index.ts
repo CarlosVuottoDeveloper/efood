@@ -19,3 +19,5 @@ export { NavPills } from "./components/SiteHeader/NavPills";
 export { Hero } from "./components/Hero/Hero";
 export { FeatureCard } from "./components/FeatureCard/FeatureCard";
 export { LogoWall } from "./components/LogoWall/LogoWall";
+export { Field } from "./components/Field/Field";
+export { Checkbox, type CheckboxProps } from "./components/Field/Checkbox";
