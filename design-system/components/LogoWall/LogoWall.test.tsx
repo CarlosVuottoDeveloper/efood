@@ -27,4 +27,15 @@ describe("LogoWall", () => {
     expect(first).toHaveAttribute("data-variant", "featured");
     expect(second).toHaveAttribute("data-variant", "default");
   });
+
+  it("LogoWall.Root repassa props nativas e concatena className", () => {
+    render(
+      <LogoWall.Root label="Parceiros" id="parceiros" className="extra">
+        <LogoWall.Item>Café Vila</LogoWall.Item>
+      </LogoWall.Root>,
+    );
+    const list = screen.getByRole("list", { name: "Parceiros" });
+    expect(list).toHaveAttribute("id", "parceiros");
+    expect(list).toHaveClass("extra");
+  });
 });

@@ -1,13 +1,9 @@
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps } from "react";
 import { cx } from "../../utils/cx";
 import styles from "./LogoWall.module.css";
 
-function Root({ label, children, className }: { label: string; children: ReactNode; className?: string }) {
-  return (
-    <ul aria-label={label} className={cx(styles.root, className)}>
-      {children}
-    </ul>
-  );
+function Root({ label, className, ...rest }: ComponentProps<"ul"> & { label: string }) {
+  return <ul {...rest} aria-label={label} className={cx(styles.root, className)} />;
 }
 
 function Item({ variant = "default", className, ...rest }: ComponentProps<"li"> & { variant?: "default" | "featured" }) {
