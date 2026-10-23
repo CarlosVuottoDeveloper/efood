@@ -120,6 +120,16 @@
     padding: var(--space-5) var(--space-6);
   }
 
+  /* Fixo só a partir de 960px: abaixo disso o cabeçalho tem três linhas e cobriria boa parte da tela.
+     Altura fixa: 6rem (padding 24px + botão de 48px + padding 24px). Use-a em scroll-padding-top. */
+  .root[data-position="sticky"] {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-bg-canvas);
+    box-shadow: 0 var(--border-width) 0 var(--color-bg-surface);
+  }
+
   .actions {
     flex-wrap: nowrap;
   }

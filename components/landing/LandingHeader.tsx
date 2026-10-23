@@ -4,7 +4,7 @@ import { ButtonLink, NavPills, SiteHeader } from "@/design-system";
 
 export function LandingHeader() {
   return (
-    <SiteHeader.Root>
+    <SiteHeader.Root position="sticky">
       <SiteHeader.Brand href="/">
         <Image src={logo} alt="" width={32} height={32} unoptimized priority />
         eFood
