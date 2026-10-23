@@ -1,0 +1,150 @@
+.root {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "brand"
+    "nav"
+    "actions";
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-4);
+  max-width: 100%;
+}
+
+.brand {
+  grid-area: brand;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  color: var(--color-text);
+  font-size: var(--font-size-400);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.actions {
+  grid-area: actions;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.socialProof {
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.nav {
+  grid-area: nav;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding: 6px;
+  margin: -6px;
+  scroll-padding-inline: 6px;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navItem + .navItem::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-inline: var(--space-1);
+  border-radius: var(--radius-pill);
+  background: var(--color-border-accent);
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--font-size-200);
+  white-space: nowrap;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.navLink:hover {
+  background: var(--color-bg-highlight);
+}
+
+.navLink[aria-current] {
+  background: var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+
+.brand:focus-visible,
+.navLink:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 960px) {
+  .root {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "brand nav actions";
+    padding: var(--space-5) var(--space-6);
+  }
+
+  /* Fixo só a partir de 960px: abaixo disso o cabeçalho tem três linhas e cobriria boa parte da tela.
+     Altura fixa: 6rem (padding 24px + botão de 48px + padding 24px). Use-a em scroll-padding-top. */
+  .root[data-position="sticky"] {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-bg-canvas);
+    box-shadow: 0 var(--border-width) 0 var(--color-bg-surface);
+  }
+
+  .actions {
+    flex-wrap: nowrap;
+  }
+
+  .nav {
+    overflow-x: visible;
+  }
+
+  .navList {
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .socialProof {
+    display: inline-flex;
+  }
+}

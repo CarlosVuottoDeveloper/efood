@@ -1,0 +1,93 @@
+.page {
+  background: var(--color-bg-page);
+  padding: var(--space-3);
+}
+
+.canvas {
+  background: var(--color-bg-canvas);
+  border-radius: var(--radius-lg);
+  overflow: clip;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: auto;
+  max-width: var(--container-max);
+  padding-inline: var(--space-4);
+}
+
+.container[data-width="narrow"] {
+  max-width: var(--container-narrow);
+}
+
+/* O cabeçalho não é fixo, então a âncora para no topo da seção (o padding já dá o respiro).
+   Com um cabeçalho fixo, defina --section-scroll-offset com a altura dele. */
+.section {
+  scroll-margin-top: var(--section-scroll-offset, 0px);
+  padding-block: var(--space-8);
+  background: transparent;
+}
+
+.section[data-tone="surface"] {
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-lg);
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+  text-align: start;
+}
+
+.sectionHeader[data-align="center"] {
+  align-items: center;
+  text-align: center;
+}
+
+.skipLink {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 1000;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--color-action-dark);
+  color: var(--color-text-inverse);
+  transform: translateY(-200%);
+  opacity: 0;
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+
+.skipLink:focus,
+.skipLink:focus-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.skipLink:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@media (min-width: 960px) {
+  .page {
+    padding: var(--space-7);
+  }
+
+  .canvas {
+    border-radius: var(--radius-xl);
+  }
+
+  .container {
+    padding-inline: var(--space-8);
+  }
+
+  .section {
+    padding-block: var(--space-9);
+  }
+}

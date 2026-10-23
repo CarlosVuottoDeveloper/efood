@@ -1,0 +1,61 @@
+:root {
+  /* Primitivos */
+  --color-sage-200: #CCE1C3;
+  --color-white: #FFFFFF;
+  --color-gray-100: #F5F5F5;
+  --color-mint-200: #CDECBD;
+  --color-green-600: #457C5C;
+  --color-gray-600: #4F4F4F;
+  --color-ink-900: #222222;
+
+  /* Semânticas */
+  --color-bg-page: var(--color-sage-200);
+  --color-bg-canvas: var(--color-white);
+  --color-bg-surface: var(--color-gray-100);
+  --color-bg-highlight: var(--color-mint-200);
+  --color-text: var(--color-ink-900);
+  --color-text-muted: var(--color-gray-600);
+  --color-text-inverse: var(--color-white);
+  --color-action-primary: var(--color-green-600);
+  --color-action-dark: var(--color-ink-900);
+  --color-border-strong: var(--color-ink-900);
+  --color-border-accent: var(--color-mint-200);
+  --color-focus: var(--color-green-600);
+
+  --font-size-100: 0.875rem;
+  --font-size-200: 1rem;
+  --font-size-300: 1.125rem;
+  --font-size-400: 1.5rem;
+  --font-size-500: 2.25rem;
+  --font-size-600: 3rem;
+  --font-size-700: 4.5rem;
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  --radius-xl: 40px;
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+
+  --border-width: 1.5px;
+  --duration-fast: 150ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --container-max: 1240px;
+  --container-narrow: 720px;
+}

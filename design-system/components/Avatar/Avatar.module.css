@@ -1,0 +1,39 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 2px solid var(--color-bg-canvas);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-highlight);
+  color: var(--color-text);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.avatar[data-size="sm"] { width: 2rem; height: 2rem; font-size: var(--font-size-100); }
+.avatar[data-size="md"] { width: 2.5rem; height: 2.5rem; font-size: var(--font-size-200); }
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.group {
+  display: inline-flex;
+  align-items: center;
+}
+
+.group > * + * { margin-inline-start: -0.5rem; }
+
+.more {
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid var(--color-bg-canvas);
+}
+
+.group[data-size="sm"] .more { height: 2rem; }
+.group[data-size="md"] .more { height: 2.5rem; }
