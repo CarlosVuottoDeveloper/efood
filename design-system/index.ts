@@ -14,3 +14,5 @@ export { Container, type ContainerProps } from "./components/Layout/Container";
 export { Section, type SectionProps } from "./components/Layout/Section";
 export { SectionHeader, type SectionHeaderProps } from "./components/Layout/SectionHeader";
 export { SkipLink, type SkipLinkProps } from "./components/Layout/SkipLink";
+export { SiteHeader } from "./components/SiteHeader/SiteHeader";
+export { NavPills } from "./components/SiteHeader/NavPills";
