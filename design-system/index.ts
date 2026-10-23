@@ -9,3 +9,8 @@ export { IconButton, type IconButtonProps } from "./components/Button/IconButton
 export { Badge, type BadgeProps } from "./components/Badge/Badge";
 export { Avatar, type AvatarProps, type AvatarSize, type Person } from "./components/Avatar/Avatar";
 export { AvatarGroup, type AvatarGroupProps } from "./components/Avatar/AvatarGroup";
+export { PageCanvas } from "./components/Layout/PageCanvas";
+export { Container, type ContainerProps } from "./components/Layout/Container";
+export { Section, type SectionProps } from "./components/Layout/Section";
+export { SectionHeader, type SectionHeaderProps } from "./components/Layout/SectionHeader";
+export { SkipLink, type SkipLinkProps } from "./components/Layout/SkipLink";
