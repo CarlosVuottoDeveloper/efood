@@ -44,7 +44,7 @@ export function HowItWorksSection() {
                   <FeatureCard.Title id={`step-${step.number}`}>{step.title}</FeatureCard.Title>
                   <Text tone="muted">{step.description}</Text>
                 </FeatureCard.Content>
-                <FeatureCard.Media>
+                <FeatureCard.Media className={styles.stepMedia}>
                   <StepIllustration kind={step.kind} />
                 </FeatureCard.Media>
               </FeatureCard.Root>

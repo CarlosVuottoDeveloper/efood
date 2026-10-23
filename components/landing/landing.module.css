@@ -49,6 +49,14 @@
   padding-block-end: var(--space-8);
 }
 
+/* Ícone dos passos: círculo inteiro, centralizado no card (sem sangrar na borda de baixo).
+   Dois seletores para vencer a regra de mídia do FeatureCard. */
+.steps .stepMedia {
+  align-self: center;
+  width: 8.5rem;
+  margin-bottom: 0;
+}
+
 .poll {
   display: flex;
   flex-direction: column;

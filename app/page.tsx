@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <SkipLink />
-      <PageCanvas>
+      <PageCanvas id="top">
         <LandingHeader />
         <main id="main">
           <HeroSection />

@@ -21,8 +21,10 @@
   max-width: var(--container-narrow);
 }
 
+/* O cabeçalho não é fixo, então a âncora para no topo da seção (o padding já dá o respiro).
+   Com um cabeçalho fixo, defina --section-scroll-offset com a altura dele. */
 .section {
-  scroll-margin-top: var(--space-9);
+  scroll-margin-top: var(--section-scroll-offset, 0px);
   padding-block: var(--space-8);
   background: transparent;
 }

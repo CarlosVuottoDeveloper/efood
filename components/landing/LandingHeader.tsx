@@ -10,7 +10,7 @@ export function LandingHeader() {
         eFood
       </SiteHeader.Brand>
       <NavPills.Root label="Principal">
-        <NavPills.Item href="#main" current>
+        <NavPills.Item href="#top" current>
           Início
         </NavPills.Item>
         <NavPills.Item href="#about-us">Sobre nós</NavPills.Item>
