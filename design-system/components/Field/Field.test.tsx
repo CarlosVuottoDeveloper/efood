@@ -72,6 +72,38 @@ describe("Field", () => {
     expect(screen.getByLabelText("Nome")).toHaveAccessibleDescription("Erro");
   });
 
+  it("mantém aria-describedby do consumidor sem hint nem erro", () => {
+    render(
+      <Field.Root>
+        <Field.Label>Nome</Field.Label>
+        <Field.Input aria-describedby="shipping-note" />
+      </Field.Root>,
+    );
+    expect(screen.getByLabelText("Nome")).toHaveAttribute("aria-describedby", "shipping-note");
+  });
+
+  it("combina aria-describedby do consumidor com o hint", () => {
+    render(
+      <Field.Root hint="Dica">
+        <Field.Label>Nome</Field.Label>
+        <Field.Input aria-describedby="note" />
+        <Field.Message />
+        <span id="note">Nota extra</span>
+      </Field.Root>,
+    );
+    expect(screen.getByLabelText("Nome")).toHaveAccessibleDescription("Nota extra Dica");
+  });
+
+  it("mantém aria-invalid do consumidor sem erro", () => {
+    render(
+      <Field.Root>
+        <Field.Label>Nome</Field.Label>
+        <Field.Input aria-invalid="true" />
+      </Field.Root>,
+    );
+    expect(screen.getByLabelText("Nome")).toHaveAttribute("aria-invalid", "true");
+  });
+
   it("mensagem fica em região aria-live polite", () => {
     const { container } = render(
       <Field.Root>

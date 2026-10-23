@@ -37,22 +37,27 @@ export function FieldLabel({ className, ...rest }: ComponentProps<"label">) {
   return <label htmlFor={id} {...rest} className={cx(styles.label, className)} />;
 }
 
-function controlProps(field: FieldContextValue) {
+type ControlAria = { "aria-describedby"?: string; "aria-invalid"?: ComponentProps<"input">["aria-invalid"] };
+
+function controlProps(field: FieldContextValue, rest: ControlAria) {
+  const describedBy = [rest["aria-describedby"], field.hint || field.error ? field.messageId : undefined]
+    .filter(Boolean)
+    .join(" ");
   return {
     id: field.id,
-    "aria-invalid": field.error ? (true as const) : undefined,
-    "aria-describedby": field.hint || field.error ? field.messageId : undefined,
+    "aria-invalid": field.error ? (true as const) : rest["aria-invalid"],
+    "aria-describedby": describedBy || undefined,
   };
 }
 
 export function FieldInput({ className, ...rest }: ComponentProps<"input">) {
   const field = useField();
-  return <input {...rest} {...controlProps(field)} className={cx(styles.control, className)} />;
+  return <input {...rest} {...controlProps(field, rest)} className={cx(styles.control, className)} />;
 }
 
 export function FieldTextarea({ className, ...rest }: ComponentProps<"textarea">) {
   const field = useField();
-  return <textarea {...rest} {...controlProps(field)} className={cx(styles.control, styles.textarea, className)} />;
+  return <textarea {...rest} {...controlProps(field, rest)} className={cx(styles.control, styles.textarea, className)} />;
 }
 
 export function FieldMessage({ className, ...rest }: Omit<ComponentProps<"p">, "children">) {
