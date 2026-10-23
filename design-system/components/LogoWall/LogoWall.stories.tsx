@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { Container } from "../Layout/Container";
 import { LogoWall } from "./LogoWall";
 
-const names = ["Café Vila", "Cantina Lume", "Bistrô Raiz", "Padaria Grão", "Sabor da Feira", "Horta Urbana"];
+const names = ["Café Vila", "Cantina Lume", "Bistrô Raiz", "Padaria Grão", "Sabor da Feira"];
 
 function Wall() {
   return (
