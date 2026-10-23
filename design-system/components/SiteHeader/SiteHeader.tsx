@@ -20,5 +20,9 @@ function Actions({ className, ...rest }: ComponentProps<"div">) {
   return <div {...rest} className={cx(styles.actions, className)} />;
 }
 
-export const SiteHeader = { Root, Brand, Actions };
+function SocialProof({ className, ...rest }: ComponentProps<"div">) {
+  return <div {...rest} className={cx(styles.socialProof, className)} />;
+}
+
+export const SiteHeader = { Root, Brand, Actions, SocialProof };
 export type { SiteHeaderBrandProps };

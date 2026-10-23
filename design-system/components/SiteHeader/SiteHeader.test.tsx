@@ -40,4 +40,14 @@ describe("SiteHeader", () => {
     );
     expect(screen.getByRole("link", { name: "eFood" })).toHaveAttribute("href", "#home");
   });
+
+  it("SiteHeader.SocialProof renderiza filhos e concatena className", () => {
+    render(
+      <SiteHeader.SocialProof className="extra" data-testid="social">
+        <span>+90 avaliações</span>
+      </SiteHeader.SocialProof>,
+    );
+    expect(screen.getByText("+90 avaliações")).toBeInTheDocument();
+    expect(screen.getByTestId("social")).toHaveClass("extra");
+  });
 });

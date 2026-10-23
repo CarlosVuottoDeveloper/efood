@@ -41,8 +41,10 @@ function Header({ items }: Props) {
         ))}
       </NavPills.Root>
       <SiteHeader.Actions>
-        <AvatarGroup data-secondary="" people={people} size="sm" />
-        <Badge data-secondary="" tone="gray">+90 avaliações</Badge>
+        <SiteHeader.SocialProof>
+          <AvatarGroup people={people} size="sm" />
+          <Badge tone="gray">+90 avaliações</Badge>
+        </SiteHeader.SocialProof>
         <IconButton label="Mudar idioma">
           <Globe />
         </IconButton>

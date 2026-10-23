@@ -33,8 +33,10 @@
   min-width: 0;
 }
 
-.actions > [data-secondary] {
+.socialProof {
   display: none;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .nav {
@@ -138,7 +140,7 @@
 }
 
 @media (min-width: 1280px) {
-  .actions > [data-secondary] {
-    display: flex;
+  .socialProof {
+    display: inline-flex;
   }
 }
