@@ -1,5 +1,5 @@
 import Image from "next/image";
-import reusableContainers from "@/public/img/pexels/reusable-containers.jpg";
+import reusableContainers from "@/public/img/pexels/reusable-containers.webp";
 import { ButtonIcon, ButtonLink, Container, Display, Emphasis, Hero, Highlight, Text } from "@/design-system";
 import { ArrowIcon, LeafIcon } from "./icons";
 

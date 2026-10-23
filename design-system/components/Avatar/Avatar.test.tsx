@@ -18,7 +18,7 @@ describe("Avatar", () => {
   });
 
   it("Avatar com foto renderiza imagem com o nome", () => {
-    render(<Avatar person={{ name: "Maria Costa", src: "/img/vivendi.jpg" }} size="sm" />);
+    render(<Avatar person={{ name: "Maria Costa", src: "/img/vivendi.webp" }} size="sm" />);
     const img = screen.getByRole("img", { name: "Maria Costa" });
     expect(img.tagName).toBe("IMG");
     expect(img).toHaveAttribute("width", "32");

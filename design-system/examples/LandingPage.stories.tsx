@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Image from "next/image";
-import logo from "@/public/img/logo.png";
-import lifecycle from "@/public/img/product-lifecycle.png";
-import spRestaurants from "@/public/img/sp-restaurants.jpg";
+import logo from "@/public/img/logo.webp";
+import lifecycle from "@/public/img/product-lifecycle.webp";
+import spRestaurants from "@/public/img/sp-restaurants.webp";
 import {
   AvatarGroup,
   Badge,

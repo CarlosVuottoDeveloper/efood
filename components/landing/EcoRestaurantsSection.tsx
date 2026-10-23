@@ -1,5 +1,5 @@
 import Image from "next/image";
-import restaurantPlants from "@/public/img/pexels/restaurant-plants.jpg";
+import restaurantPlants from "@/public/img/pexels/restaurant-plants.webp";
 import { ButtonLink, Container, Eyebrow, Heading, Section, SectionHeader, Text } from "@/design-system";
 import styles from "./landing.module.css";
 

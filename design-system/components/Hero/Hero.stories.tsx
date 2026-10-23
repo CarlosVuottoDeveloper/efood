@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import Image from "next/image";
-import lifecycle from "@/public/img/product-lifecycle.png";
+import lifecycle from "@/public/img/product-lifecycle.webp";
 import { ButtonIcon, ButtonLink } from "../Button/Button";
 import { Container } from "../Layout/Container";
 import { Display } from "../Typography/Display";

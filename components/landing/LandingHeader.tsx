@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/public/img/logo.png";
+import logo from "@/public/img/logo.webp";
 import { ButtonLink, NavPills, SiteHeader } from "@/design-system";
 
 export function LandingHeader() {

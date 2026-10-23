@@ -397,8 +397,8 @@ O esqueleto abaixo é resumido da story **Exemplos/Landing page** (`design-syste
 
 ```tsx
 import Image from "next/image";
-import logo from "@/public/img/logo.png";
-import lifecycle from "@/public/img/product-lifecycle.png";
+import logo from "@/public/img/logo.webp";
+import lifecycle from "@/public/img/product-lifecycle.webp";
 import {
   Button, ButtonIcon, ButtonLink, Checkbox, Container, Display, Eyebrow, FeatureCard, Field,
   Heading, Hero, Highlight, LogoWall, NavPills, PageCanvas, Section, SectionHeader, SiteHeader,

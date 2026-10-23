@@ -1,5 +1,5 @@
 import Image from "next/image";
-import netBags from "@/public/img/pexels/net-bags.jpg";
+import netBags from "@/public/img/pexels/net-bags.webp";
 import { Container, Eyebrow, Heading, Section, SectionHeader, Text } from "@/design-system";
 import styles from "./landing.module.css";
 
